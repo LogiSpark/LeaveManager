@@ -4,7 +4,7 @@ require("../functions.php"); //including functions.php will automatically start 
 <html>
 <head>
       <meta charset="utf-8">
-      <mata name="viewport" content="width=device, initial-sctiale=1.0">
+      <meta name="viewport" content="width=device, initial-sctiale=1.0">
       <title>Leave application</title>
        <link href="../libs/css/bootstrap.min.css" rel="stylesheet">
       <!-- in server <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
