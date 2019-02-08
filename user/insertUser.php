@@ -36,28 +36,13 @@
 		$_SESSION['errors'][] = "Empty last name" ;
 		$validation = 1;
 	}
-	if(empty($batch))
-	{
-		$_SESSION['errors'][] = "Empty batch" ;
-		$validation = 1;
-	}
-	if(empty($section))
-	{
-		$_SESSION['errors'][] = "Empty section" ;
-		$validation = 1;
-	}
-	if(empty($rollNo))
-	{
-		$_SESSION['errors'][] = "Empty roll number" ;
-		$validation = 1;
-	}
 	if(empty($contactNo))
 	{
 		$_SESSION['errors'][] = "Empty contact number" ;
 		$validation = 1;
 	}
 
-	$query = "select * from student where username = '$username'";
+	$query = "select * from employee where username = '$username'";
 	$res = execute($query);
 	$num = total_rows($res);
 	if($num>0)
@@ -66,7 +51,7 @@
 		$validation = 1;
 	}
 
-	$query = "select * from student where firstName = '$firstName' and lastName = '$lastName'";
+	$query = "select * from employee where firstName = '$firstName' and lastName = '$lastName'";
 	$res = execute($query);
 	$num = total_rows($res);
 	if($num>0)
@@ -81,7 +66,7 @@
 		exit;
 	}
 
-	insert($_SESSION['Data'], "student");
+	insert($_SESSION['Data'], "employee");
 
 	$condition =array('username' => $username );
 

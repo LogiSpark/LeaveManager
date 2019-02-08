@@ -2,16 +2,13 @@ create database LeaveApp;
 
 use LeaveApp;
 
-create table student
+create table employee
 (
 	id int primary key auto_increment,
 	username varchar(200),
 	firstName varchar(200),
 	lastName varchar(200),
-	batch varchar(40),
-	section char(3),
-	rollNo int,
-	contactNo varchar(30),
+ 	contactNo varchar(30),
 	password varchar(200),
 	status varchar(200)
 );
