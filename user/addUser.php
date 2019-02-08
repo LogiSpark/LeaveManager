@@ -44,7 +44,7 @@ if(isset($oldData)){
         echo "<p class = 'bg-danger'>";
         foreach ($_SESSION['errors'] as $error) {
           # code...
-          echo "<b class = 'text-danger'>$error</b><br>";
+          echo "<b class = 'text-danger'>$error </b><br>";
          } 
          echo "</p>";
          echo "</ul>";
