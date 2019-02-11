@@ -41,35 +41,6 @@
     
   </div>
     <form class = "form-horizontal" action = "editAccountLogic.php?id=<?php echo $_GET['id'] ?>" method = "post">
-
-     
-
-      
-
-       <div class = "form-group ">   
-          <label for = "batch" class = "control-label col-sm-2" >Batch: </label>
-             <div class = "col-sm-5">
-                 <input type = "text" class = "form-control" name="batch" value = <?php echo $data['batch'] ?> >
-             </div>   
-       </div> 
-
-
-       <div class = "form-group">   
-            <label for = "section" class = "control-label col-sm-2">Section: </label>
-            <div class = "col-sm-5">
-             <input type = "text" class = "form-control" name="section" value = <?php echo $data['section'] ?> >
-            </div>  
-        </div>
-    
-
-       <div class = "form-group">
-          <label for = "rollno" class = "control-label col-sm-2">Roll No: </label>
-          <div class = "col-sm-5">
-             <input type = "text" class = "form-control" name="rollNo" value = <?php echo $data['rollNo'] ?>>
-          </div>
-       </div> 
-
-      
       
        <div class = "form-group">
           <label for = "contNo" class = "control-label col-sm-2">Contact No: </label>

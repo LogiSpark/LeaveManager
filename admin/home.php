@@ -29,7 +29,9 @@ if(!checkLogin()){ // check if user is logged in, if not redirect to login page
     </div>  
     
 	<div>
-		<a href="viewAll.php?id=<?php echo $_GET['id'] ?>" class="btn btn-warning col-md-offset-7">View History</a>
+		<a href="viewAll.php?id=<?php echo $_GET['id'] ?>" class="btn btn-warning col-md-offset-6">View History</a>
+
+        <a href="applyLeave.php?id=<?php echo $_GET['id']?>" class="btn btn-link">Apply Leave</a>
 
 		<a href="../user/addUser.php" class="btn btn-success">Add User</a>
 

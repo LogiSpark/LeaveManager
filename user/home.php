@@ -16,10 +16,8 @@ if(!checkLogin()){ // check if user is logged in, if not redirect to login page
       <meta charset="utf-8">
       <meta name="viewport" content="width=device, initial-sctiale=1.0">
       <title>Leave application</title>
-       <link href="../libs/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../libs/css/bootstrap.min.css" rel="stylesheet">
       <!-- in server <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
-
-
   </head>
 
 <body class= "bg-info">    
@@ -28,8 +26,6 @@ if(!checkLogin()){ // check if user is logged in, if not redirect to login page
     <div class="jumbotron well-lg ">
       <h1 class = "text-success">Leave application Form</h1> 
       <?php
-
-
           if(isset($_SESSION['Feedback']))
           {
               $Feedback = $_SESSION['Feedback'];// print the feedbacks
@@ -81,7 +77,7 @@ if(!checkLogin()){ // check if user is logged in, if not redirect to login page
           <div class="col-sm-5">
             <textarea class="form-control" rows="4" name="reason" ></textarea>
           </div>
-    </div>
+     </div>
     
 
      <div class = "form-group">

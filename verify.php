@@ -44,6 +44,7 @@
 		$res = execute($query);
 		$arr = fetch_array($res);
 		$_SESSION['loggedInUser'] = $arr['username'];
+		$_SESSION['id'] = $arr['id'];
 		$id= $arr['id'];
 		if($arr['isAdmin']) {
             header("location:admin/home.php?id=$id");
