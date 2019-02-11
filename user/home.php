@@ -98,37 +98,6 @@ if(!checkLogin()){ // check if user is logged in, if not redirect to login page
         </div>
      </div>
 
-     <div class = "form-group" >
-      <label for = "EmailOfTeach" class = "control-label col-sm-2">Email of teacher to cc to: </label>
-        <div class = "col-sm-5">
-          <input type = "email" class = "form-control" name = "myInputs[]">
-        </div>    
-     </div>
-
-      <div id="dynamicInput">
-
-      </div> 
-
-     <div class = "form-group">
-      <label for= "button" class = "control-label col-sm-2"></label>
-      
-     <div class = "col-sm-5">
-        <input class="btn btn-default"  role="button" id = "choose" value="   +   " type = "button"  onclick="addInput('dynamicInput');">
-      </div>
-    </div>
- 
-    <script>
-    function addInput(divName)
-    {
-       var newdiv = document.createElement('div');
-       newdiv.innerHTML = "<div class = 'form-group'><label class = 'control-label col-sm-2'>Email address of teacher: </label><div class='col-sm-5' > <input type='email' class = 'form-control' name='myInputs[]'></div></div>";
-       document.getElementById(divName).appendChild(newdiv);
-       counter++;
-    }
-    
-    
-    </script>
-
 
 
      <div class = "form-group">

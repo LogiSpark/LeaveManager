@@ -10,10 +10,8 @@
 
 
 	// generate code for checking invalid username
-	if($_POST['role']=='Admin')
-		$query = "select * from admin where username = \"$username\"";
-	else
-		$query = "select * from student where username = \"$username\"";
+
+	$query = "select * from employee where username = \"$username\"";
 
 	$result = execute($query);
 	$num = total_rows($result);
@@ -27,10 +25,8 @@
 	}
 
 	// generate code for checking invalid password
-	if($_POST['role']=='Admin')
-		$query1 = "select * from admin where username = \"$username\" and password = \"$password\"";
-	else
-		$query1 = "select * from student where username = \"$username\" and password = \"$password\"";
+
+	$query1 = "select * from employee where username = \"$username\" and password = \"$password\"";
 
 	
 	$result2 = execute($query1);
@@ -42,41 +38,21 @@
 		exit;
 	}
 
-
-
 	// redirect to admin's homepage
-	if($_POST['role']=='Admin')
-	{
-		$query = "select username,id from admin where username = \"$username\"" ;
+
+		$query = "select username,id, isAdmin from employee where username = \"$username\"" ;
 		$res = execute($query);
 		$arr = fetch_array($res);
 		$_SESSION['loggedInUser'] = $arr['username'];
 		$id= $arr['id'];
-		header("location:admin/home.php?id=$id");
-		exit;
-	}
+		if($arr['isAdmin']) {
+            header("location:admin/home.php?id=$id");
+            exit;
+        }
+        else{
+            header("location:user/home.php?id=$id");
+            exit;
+        }
 
-	else// redirect to user's homepage
-	{
-		$query = "select username, id, status from student where username = \"$username\"" ;
-		$res = execute($query);
-		$arr = fetch_array($res);
-		$status = $arr['status'];
-		if($status == null)
-		{
-			$_SESSION['invalidUser']="The account is not active yet!!";
-			header("Location:login.php");
-			exit;
-		}
-		else
-		{
-			$id= $arr['id'];
-			$_SESSION['loggedInUser'] = $arr['username'];
-			// print_r($arr);
-			// echo $_SESSION['loggedInUser'];
-			header("location:user/home.php?id=$id");
-			exit;
-		}
-	}
 
 ?>

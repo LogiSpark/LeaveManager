@@ -67,18 +67,39 @@ if(isset($oldData)){
 
      <div class="fluid-container">  
        <div class = "form-group">
-          <label for = "username" class = "control-label col-sm-2">User Name: </label>     
+          <label for = "username" class = "control-label col-sm-2">Name: </label>
           <div class = "col-sm-5">
-             <input type = "text" class = "form-control" name="username" placeholder = "Enter User Name">
+             <input type = "text" class = "form-control" name="name">
+          </div>
+       </div>
+         <div class = "form-group">
+             <label for = "contNo" class = "control-label col-sm-2">Contact No: </label>
+             <div class = "col-sm-5">
+                 <input type = "text" class = "form-control" name = "contactNo" id="contactNo">
+             </div>
+         </div>
+         <div class = "form-group">
+             <label for = "username" class = "control-label col-sm-2">Email: </label>
+             <div class = "col-sm-5">
+                 <input type = "text" class = "form-control" name="username" id="username">
+             </div>
+         </div>
+       <div class = "form-group">
+          <label for = "password" class = "control-label col-sm-2">Password: </label>
+          <div class = "col-sm-5">
+             <input type = "password" class = "form-control" name = "password">
           </div>
        </div>
 
-       <div class = "form-group">
-          <label for = "password" class = "control-label col-sm-2">Password for the account: </label>
-          <div class = "col-sm-5">
-             <input type = "password" class = "form-control" name = "password"  placeholder = "Enter password">
-          </div>
-       </div> 
+     <div class = "form-group ">
+         <label for = "isAdmin" class = "control-label col-sm-2" >Role: </label>
+         <div class = "col-sm-5">
+             <select class="form-control" name= "isAdmin" value="isAdmin">
+                 <option value="1">Admin</option>
+                 <option value="0">Employee</option>
+             </select>
+         </div>
+     </div>
 
 
         <div class = "form-group">

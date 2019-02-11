@@ -34,3 +34,13 @@ create table leaveData
 select * from student;
 
 insert into admin(username,password) values ("admin","admin");
+
+alter table employee add column isAdmin bool;
+
+alter table employee drop column role;
+
+select * from employee;
+
+alter table leaveData add column leave_type varchar(244);
+
+alter table leaveData add column duration numeric(3,2);

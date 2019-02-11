@@ -98,16 +98,6 @@ session_start()
 							</div>
 						</div>
 
-						 <div class = "form-group ">   
-						        <label for = "batch" class = "control-label col-sm-2" >Role: </label>
-						           <div class = "col-sm-5">
-						              <select class="form-control" name= "role">
-						                <option value="Admin">Admin</option>
-						                <option value="Normal User">Normal User</option>
-						              </select>
-						           </div>   
-						     </div> 
-
 						<div class = "form-group">
 						     <div class = "col-sm-10 col-sm-offset-2">
 						     	<input class="btn btn-primary" role="button" value="SUBMIT" type="submit">

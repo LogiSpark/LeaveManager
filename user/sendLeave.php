@@ -119,5 +119,5 @@
 	insert($dataForLeave,"leavedata");
 
 	header("location:home.php?id=$id");
-	    die;
+	die;
 ?> 
