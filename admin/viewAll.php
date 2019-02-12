@@ -47,14 +47,14 @@ require("../functions.php"); //including functions.php will automatically start 
 			<tbody>
 <?php
 		$sn =1;
-		$query = "select name, startDate,endDate,leaveData.status,reason from leaveData inner join student on leaveData.Sid = student.id order by leaveData.id desc";// perform a join to get the total information. See the database for more info.
+		$query = "select name, startDate,endDate,leaveData.status,reason from leaveData inner join employee on leaveData.eid = employee.id order by leaveData.id desc";// perform a join to get the total information. See the database for more info.
 		$result = execute($query);
 		if(total_rows($result)>0){ //total_rows() function in functions.php
 			while ($row = fetch_array($result)) 
 			{ // fetch_array() function in function.php		
 				?>
 					<tr class ="<?php
-								if($row['status'] == null)
+								if($row['status'] == "pending")
 								{
 									echo "warning";
 								}
@@ -75,7 +75,7 @@ require("../functions.php"); //including functions.php will automatically start 
 						 <td><?php echo $row['reason'] ?></td> 
 						<td>
 							<?php
-								if($row['status'] == null)
+								if($row['status'] == "pending")
 								{
 									echo "<div class = \"text-warning\">Pending</div>";
 								}

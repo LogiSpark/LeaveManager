@@ -22,14 +22,15 @@ create table admin
 
 create table leaveData
 (
-	name varchar(200),	
 	startDate varchar(200),
 	endDate varchar(200),
 	reason varchar(400),
 	id int primary key auto_increment,
-	Sid int references student(id),
+	eid int references employee(id),
 	status varchar(200)
 );
+
+drop table leaveData;
 
 select * from student;
 
@@ -37,10 +38,17 @@ insert into admin(username,password) values ("admin","admin");
 
 alter table employee add column isAdmin bool;
 
-alter table employee drop column role;
+alter table employee drop column status;
 
-select * from employee;
+describe leaveData;
+
+select * from employee ;
+
+select * from leaveData;
 
 alter table leaveData add column leave_type varchar(244);
 
 alter table leaveData add column duration numeric(3,2);
+
+
+alter table employee add column email varchar(244);

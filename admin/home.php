@@ -60,12 +60,15 @@ if(!checkLogin()){ // check if user is logged in, if not redirect to login page
 			<tbody>
 <?php
 		$sn =1;
-		$result =listAllDesc("leaveData","id"); // we do have function listAllDesc($tableName) to return all rows from given table in functions.php
-		if(total_rows($result)>0){ //total_rows() function in functions.php
+    $query = "select leaveData.id, eid,employee.name, startDate,endDate,leaveData.status,reason from leaveData inner join employee on leaveData.eid = employee.id order by leaveData.id desc";// perform a join to get the total information. See the database for more info.
+    $result = execute($query);
+
+    if(total_rows($result)>0){ //total_rows() function in functions.php
 			while ($row = fetch_array($result)) 
 			{ // fetch_array() function in function.php
-				if ($row['status']==null)
+				if ($row['status']=="pending")
 				 {
+//				     print_r($row);
 					
 				
 				?>
@@ -75,10 +78,10 @@ if(!checkLogin()){ // check if user is logged in, if not redirect to login page
 						<td><?php echo $row['startDate'] ?></td>
 						<td><?php echo $row['endDate'] ?></td>
 						<td><?php echo $row['reason'] ?></td>
-						<td><a href="getHistory.php?id=<?php echo $row['Sid']?>&Aid=<?php echo $_GET['id']?>" class="btn btn-info">View History</a></td>
-						<td><a href="action.php?action=accepted&Sid=<?php echo $row['Sid']?>&id=<?php echo $row['id']?>&Aid=<?php echo $_GET['id']?>" class="btn btn-success">Accept</a>
-							<!-- <a href="#" class="btn btn-danger" onclick="return confirm('Are you sure?');">Reject</a> -->
-							<a href="action.php?action=rejected&Sid=<?php echo $row['Sid']?>&id=<?php echo $row['id']?>&Aid=<?php echo $_GET['id']?>" class="btn btn-danger">Reject</a>
+						<td><a href="getHistory.php?id=<?php echo $row['eid']?>&Aid=<?php echo $_GET['id']?>" class="btn btn-info">View History</a></td>
+						<td>
+                            <a href="action.php?action=accepted&id=<?php echo $row['id']?>" class="btn btn-success">Accept</a>
+                            <a href="action.php?action=rejected&id=<?php echo $row['id']?>" class="btn btn-danger">Reject</a>
 						</td>
 					</tr>
 				<?php

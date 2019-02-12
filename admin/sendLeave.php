@@ -138,10 +138,7 @@
 //
 //
 //
-//	// add the leave to the database
-//	$dataForLeave = array("name"=>$name, "startDate" => $stDate,"endDate"=>$endDate,"Sid"=>$data['id'], "reason"=>$_POST['reason'] );
 
-//	insert($dataForLeave,"leavedata");
 
 	header("location:home.php?id=$id");
 	die;
