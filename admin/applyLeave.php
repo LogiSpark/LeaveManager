@@ -5,7 +5,7 @@ include '../functions.php';
 
 if(!checkLogin()){ // check if user is logged in, if not redirect to login page
 
-    //redirect('../login.php');
+    redirect('../login.php');
 }
 
 
@@ -135,7 +135,7 @@ if(!checkLogin()){ // check if user is logged in, if not redirect to login page
                 '            <label class="checkbox-inline"><input type="radio" value="second_half" name="duration"> Second Half</label></div>\n\n');
         }
         else if ($(this).val() == "multiple"){
-            $(wrapper2).append(' <div class = "form-group">\n' +
+            $(wrapper2).append('<div class = "form-group">\n' +
                 '                <label for = "startDate" class = "control-label col-sm-2">Start Date: </label>\n' +
                 '                <div class = "col-sm-5">\n' +
                 '                    <input type = "date"  class = "form-control" name = "stDate" id = "stDate">\n' +

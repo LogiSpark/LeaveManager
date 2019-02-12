@@ -7,9 +7,12 @@
 	redirect('../login.php');
 	}
 
+	$data['reason'] = $_POST['reason'];
+	$data['leave_type'] = $_POST['leaveType'];
+	$data['eid'] = $_SESSION['id'];
+	$data['status'] = 'pending';
 
 	if($_POST['leaveDuration']=='single'){
-		$data['reason'] = $_POST['reason'];
 		$data['startDate'] = $_POST['leaveDate'];
 		$data['endDate'] = $_POST['leaveDate'];
 		if($_POST['duration']=='full_day'){
@@ -18,10 +21,17 @@
 		else{
 			$data['duration'] = 0.5;
 		}
-		$data['type'] = $_POST['leaveType'];
-		$data['eid'] = $_SESSION['id'];
 		insert($data, 'leaveData');
 	}
+
+	else{
+        $data['startDate'] = $_POST['stDate'];
+        $data['endDate'] = $_POST['endDate'];
+       	$data['duration'] = (int)date_diff(date_create($_POST['stDate']), date_create($_POST['endDate']))->format('%a') + 1;
+
+        insert($data, 'leaveData');
+    }
+
 //	require_once('../libs/phpmailer/class.phpmailer.php');
 //	require_once("../libs/phpmailer/class.smtp.php");
 //	require ("../libs/phpmailer/PHPMailerAutoload.php");
@@ -131,7 +141,7 @@
 //	// add the leave to the database
 //	$dataForLeave = array("name"=>$name, "startDate" => $stDate,"endDate"=>$endDate,"Sid"=>$data['id'], "reason"=>$_POST['reason'] );
 
-	insert($dataForLeave,"leavedata");
+//	insert($dataForLeave,"leavedata");
 
 	header("location:home.php?id=$id");
 	die;
