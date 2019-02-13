@@ -1,5 +1,10 @@
 <?php
 require("../functions.php"); //including functions.php will automatically start session also
+if(!checkLogin()){ // check if user is logged in, if not redirect to login page
+    redirect('../login.php');
+
+}
+
 ?>
 <html>
 <head>
